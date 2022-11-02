@@ -27,6 +27,6 @@ async function fetchPropertyInfoObj() {
 
 export default async function handler(req,res) {
     let data = await fetchPropertyInfoObj()
-    let authMethods = {...data.phoneNumbers, ...data.emailAddresses}
+    let authMethods = {...data.emailAddresses, ...data.phoneNumbers}
     res.status(200).json(authMethods)
 }
