@@ -4,7 +4,7 @@ import MenuLinks from "../(components)/MenuLinks";
 import {useState, use} from "react";
 //
 async function getAutopayStatus(){
-    const autopayStatus = fetch("http://localhost:3000/api/autopayStatus")
+    const autopayStatus = fetch("https://server-neon-tau.vercel.app/api/autopayStatus", {next: {revalidate: 1}})
     return autopayStatus.json()
 }
 

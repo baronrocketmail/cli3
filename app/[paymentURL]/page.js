@@ -2,7 +2,7 @@ import MenuLinks from "../(components)/MenuLinks";
 import React from "react";
 
 async function getUnpaid(){
-    const unpaid = await fetch("http://localhost:3000/api/unpaid")
+    const unpaid = await fetch("https://server-neon-tau.vercel.app/api/unpaid", {next: {revalidate: 1}})
     return unpaid.json()
 }
 

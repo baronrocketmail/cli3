@@ -3,17 +3,17 @@ import React from "react";
 
 
 async function getName(){
-    const info = await fetch("http://localhost:3000/api/name")
+    const info = await fetch("https://server-neon-tau.vercel.app/api/name", {next: {revalidate: 1}})
     return info.json()
 }
 
 async function getApplicationsOpen(){
-    const applicationsOpen = await fetch("http://localhost:3000/api/applicationsOpen")
+    const applicationsOpen = await fetch("https://server-neon-tau.vercel.app/api/applicationsOpen", {next: {revalidate: 1}})
     return applicationsOpen.json()
 }
 
 async function getUnpaid(){
-    const unpaid = await fetch("http://localhost:3000/api/unpaid")
+    const unpaid = await fetch("https://server-neon-tau.vercel.app/api/unpaid", {next: {revalidate: 1}})
     return unpaid.json()
 }
 
